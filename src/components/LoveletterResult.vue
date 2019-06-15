@@ -22,13 +22,15 @@
       <img src="@/assets/letter_foot.gif" alt>
     </div>
     <template v-if="step >= 7">
-      <p class="kanso-result_build">
-        <button type="button" @click="handleClickRestart">もう一度つくる</button>
-      </p>
-      <p class="kanso-result_share">
-        <input type="text" class="kanso-result_shareurl" readonly :value="shareUrl">
-        <a target="_blank" :href="twitterUrl">つぶやく</a>
-      </p>
+      <div style="background: #fff;">
+        <p class="loveletter-result_build">
+            <button type="button" @click="handleClickRestart">もう一度つくる</button>
+        </p>
+        <p class="loveletter-result_share">
+            <input type="text" class="loveletter-result_shareurl" readonly :value="shareUrl">
+            <a target="_blank" :href="twitterUrl">つぶやく</a>
+        </p>
+      </div>
     </template>
   </div>
 </template>
@@ -177,10 +179,14 @@ img {
 
 .loveletter-result_build {
   text-align: right;
+  background: #fff;
+      padding: 1em 0 0;
+    margin: 0;
 }
 
 .loveletter-result_share {
   font-size: 12px;
+  background: #fff;
 }
 
 .loveletter-result_shareurl {
