@@ -5,7 +5,7 @@
             <dd>
                 <select required v-model="selectedValue">
                     <template v-for="(choice, i) in choices">
-                        <option :value="1" :key="choice">{{choice}}</option>
+                        <option :value="i" :key="choice">{{choice}}</option>
                     </template>
                 </select>
             </dd>
@@ -27,7 +27,7 @@
         },
         methods: {
             handleSubmit() {
-                this.$emit('input',this.selectedValue),
+                this.$emit('input',this.selectedValue)
                     this.$emit('next')
             }
         }

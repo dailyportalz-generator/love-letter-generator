@@ -11,7 +11,7 @@
                     <template v-for="(results, questionNumber) in resultsList">
                         <p v-if="step > questionNumber+2" :key="questionNumber">
                             <template v-for="(result, resultIndex) in results">
-                                <span :key="result" v-if="questions[`q${questionNumber+2}`] === resultIndex+1">{{result}}</span>
+                                <span :key="result" v-if="questions[`q${questionNumber+2}`] === resultIndex">{{result}}</span>
                             </template>
                         </p>
                     </template>

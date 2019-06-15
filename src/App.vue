@@ -85,13 +85,13 @@ export default {
       sex: 'men',
       questions: {
         name: '',
-        title: 1,
-        q2: 1,
-        q3: 1,
-        q4: 1,
-        q5: 1,
-        q6: 1,
-        q7: 1,
+        title: 0,
+        q2: 0,
+        q3: 0,
+        q4: 0,
+        q5: 0,
+        q6: 0,
+        q7: 0,
       }
     }
   },
