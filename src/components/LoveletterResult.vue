@@ -1,26 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="loveletter-result">
-        <div class="loveletter-result_main">
-            <img src="@/assets/letter_head.gif" alt>
-            <div style="display: flex;align-items: stretch">
-                <img src="@/assets/letter_left.gif" alt>
-                <div class="loveletter-result__message">
-                    <p v-if="step>1">
-                        {{questions.name}} {{titleList[questions.title-1]}}
-                    </p>
-                    <template v-for="(results, questionNumber) in resultsList">
-                        <p v-if="step > questionNumber+2" :key="questionNumber">
-                            <template v-for="(result, resultIndex) in results">
-                                <span :key="result" v-if="questions[`q${questionNumber+2}`] === resultIndex">{{result}}</span>
-                            </template>
-                        </p>
-                    </template>
-                </div>
-                <img src="@/assets/letter_right02.gif" alt>
-            </div>
-            <img src="@/assets/letter_foot.gif" alt>
-=======
   <div class="loveletter-result">
     <div class="loveletter-result_main">
       <img src="@/assets/letter_head.gif" alt>
@@ -33,12 +11,11 @@
               <template v-for="(result, resultIndex) in results">
                 <span
                   :key="result"
-                  v-if="questions[`q${questionNumber+2}`] === resultIndex+1"
+                  v-if="questions[`q${questionNumber+2}`] === resultIndex"
                 >{{result}}</span>
               </template>
             </p>
           </template>
->>>>>>> 4b5f16eb4e318a6bfb642f36c3e181381bdc9797
         </div>
         <img src="@/assets/letter_right02.gif" alt>
       </div>
@@ -47,11 +24,11 @@
     <template v-if="step >= 7">
       <div style="background: #fff;">
         <p class="loveletter-result_build">
-            <button type="button" @click="handleClickRestart">もう一度つくる</button>
+          <button type="button" @click="handleClickRestart">もう一度つくる</button>
         </p>
         <p class="loveletter-result_share">
-            <input type="text" class="loveletter-result_shareurl" readonly :value="shareUrl">
-            <a target="_blank" :href="twitterUrl">つぶやく</a>
+          <input type="text" class="loveletter-result_shareurl" readonly :value="shareUrl">
+          <a target="_blank" :href="twitterUrl">つぶやく</a>
         </p>
       </div>
     </template>
@@ -71,11 +48,9 @@ export default {
       return ['さま', '様', '殿', 'さん', 'くん', 'ちゃん']
     },
     shareUrl() {
-      return `https://dailyportalz.jp/kiji/love-letter-generator?${stringify(
-        {
-          ...this.questions
-        }
-      )}`
+      return `https://dailyportalz.jp/kiji/love-letter-generator?${stringify({
+        ...this.questions
+      })}`
     },
     twitterUrl() {
       return `https://twitter.com/intent/tweet?text=読書感想文メールジェネレーター&url=${encodeURIComponent(
@@ -203,8 +178,8 @@ img {
 .loveletter-result_build {
   text-align: right;
   background: #fff;
-      padding: 1em 0 0;
-    margin: 0;
+  padding: 1em 0 0;
+  margin: 0;
 }
 
 .loveletter-result_share {
